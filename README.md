@@ -145,6 +145,7 @@ At first it was a wall of red rows, which looked alarming. It turned out to be c
 | `RST` from Kali | Nmap hangs up before finishing, which is why it's called a SYN or "half-open" scan |
 
 A burst of SYNs to lots of different ports, followed by lots of resets, is what a port scan looks like on the wire. It's exactly the kind of pattern a SIEM would alert on.
+![nmap port scan in wirehsark](Nmap_Port_scan.png)
 
 ### 4. Logging in over SSH, from both sides
 
@@ -155,6 +156,7 @@ ssh <username>@192.168.182.20
 ```
 
 This time Wireshark showed the full connection: the TCP handshake, the SSH setup, and then a stream of encrypted packets. I could tell that a login happened, but I couldn't read anything that was typed. That told me that SSH was doing its job.
+![SSH capture in wireshark](ssh_capture.png)
 
 Then I switched to Ubuntu to see the same login from the defender's side:
 
@@ -163,6 +165,7 @@ sudo journalctl -u ssh --since "10 minutes ago" #shows the log entries that the 
 ```
 
 The log showed a line like `Accepted password for <user> from 192.168.182.10`. If someone were guessing passwords, I'd expect to see a pile of `Failed password` lines instead.
+
 
 ---
 
