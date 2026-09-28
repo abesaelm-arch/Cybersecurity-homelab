@@ -167,9 +167,9 @@ Then I switched to Ubuntu to see the same login from the defender's side:
 ```bash
 sudo journalctl -u ssh --since "10 minutes ago" #shows the log entries that the ssh server wrote in the last 10minutes
 ```
-![journalctl SSH login log](journal-login_log.png)
+![journalctl SSH login log](journalctl-login_log.png)
 The Trail Failed attempts
-![SSH login](failed_trail_ssh-lo-in-attempts.png)
+![SSH login](failed_trail_ssh_lo_in_attempts.png)
 ![journalctl SSH login log](Accepted_journalctl-login.png)
 
 The log showed a line like `Accepted password for <user> from 192.168.182.10`. If someone were guessing passwords, I'd expect to see a pile of `Failed password` lines instead.
