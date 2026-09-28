@@ -145,6 +145,7 @@ At first it was a wall of red rows, which looked alarming. It turned out to be c
 | `RST` from Kali | Nmap hangs up before finishing, which is why it's called a SYN or "half-open" scan |
 
 A burst of SYNs to lots of different ports, followed by lots of resets, is what a port scan looks like on the wire. It's exactly the kind of pattern a SIEM would alert on.
+
 ![nmap scans](Port_scans.png)
 ![nmap port scan in wirehsark](Nmap_Port_scan.png)
 ![nmap port scan in wirehsark](Port-scan_wireshark.png)
