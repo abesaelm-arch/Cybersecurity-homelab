@@ -146,6 +146,7 @@ At first it was a wall of red rows, which looked alarming. It turned out to be c
 
 A burst of SYNs to lots of different ports, followed by lots of resets, is what a port scan looks like on the wire. It's exactly the kind of pattern a SIEM would alert on.
 ![nmap port scan in wirehsark](Nmap_Port_scan.png)
+![nmap scans](nmap_scans.png)
 
 ### 4. Logging in over SSH, from both sides
 
@@ -163,6 +164,10 @@ Then I switched to Ubuntu to see the same login from the defender's side:
 ```bash
 sudo journalctl -u ssh --since "10 minutes ago" #shows the log entries that the ssh server wrote in the last 10minutes
 ```
+![journalctl SSH login log](journal-login_log.png)
+The Trail Failed attempts
+![SSH login](failed_trail_ssh-lo-in-attempts.png)
+![journalctl SSH login log](Accepted_journalctl-login.png)
 
 The log showed a line like `Accepted password for <user> from 192.168.182.10`. If someone were guessing passwords, I'd expect to see a pile of `Failed password` lines instead.
 
