@@ -162,15 +162,18 @@ ssh <username>@192.168.182.20
 This time Wireshark showed the full connection: the TCP handshake, the SSH setup, and then a stream of encrypted packets. I could tell that a login happened, but I couldn't read anything that was typed. That told me that SSH was doing its job.
 ![SSH capture in wireshark](ssh_capture.png)
 
+
 Then I switched to Ubuntu to see the same login from the defender's side:
 
 ```bash
 sudo journalctl -u ssh --since "10 minutes ago" #shows the log entries that the ssh server wrote in the last 10minutes
 ```
-![journalctl SSH login log](journalctl-login_log.png)
-The Trail Failed attempts
 ![SSH login](failed_trail_ssh_lo_in_attempts.png)
-![journalctl SSH login log](Accepted_journalctl-login.png)
+
+![journalctl SSH login log](Accpted_journalctl-login.png)
+
+![journalctl SSH login log](journalctl-login_log.png)
+
 
 The log showed a line like `Accepted password for <user> from 192.168.182.10`. If someone were guessing passwords, I'd expect to see a pile of `Failed password` lines instead.
 
